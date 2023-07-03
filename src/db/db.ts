@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { User, CreateUserDto, UpdateUserDto } from './types';
+import { User, UserDto } from './types';
 
 class UserDb {
   private users: User[];
@@ -26,14 +26,14 @@ class UserDb {
     return this.findOneOrFail(id);
   };
 
-  public createUser = (userDto: CreateUserDto) => {
+  public createUser = (userDto: UserDto) => {
     const id = uuid();
     const createdUser = { id, ...userDto };
     this.users = [...this.users, createdUser];
     return createdUser;
   };
 
-  public updateUser = (id: string, userDto: UpdateUserDto) => {
+  public updateUser = (id: string, userDto: UserDto) => {
     const userToUpdate = this.findOneOrFail(id);
     const updatedUser = { ...userToUpdate, ...userDto };
     this.users = this.users.map((user) => (user.id === userToUpdate.id ? updatedUser : user));

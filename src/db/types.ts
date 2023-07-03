@@ -7,6 +7,4 @@ export interface User {
   hobbies: UserHobby[];
 }
 
-export type CreateUserDto = Omit<User, 'id'>;
-
-export type UpdateUserDto = Partial<User>;
+export type UserDto = Omit<User, 'id'>;
