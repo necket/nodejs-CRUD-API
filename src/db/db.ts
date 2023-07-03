@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 import { User, UserDto } from './types';
 
-class UserDb {
+export class UserDb {
   private users: User[];
 
   constructor() {
