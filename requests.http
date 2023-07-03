@@ -1,0 +1,31 @@
+### Get all users
+GET http://localhost:4000/api/users
+Content-Type: application/json
+
+### Get user by id (replace with existing user uuid)
+GET http://localhost:4000/api/users/b3dcb9d8-d12a-4757-a1bd-6fc49a472c4d
+Content-Type: application/json
+
+### Create user
+POST http://localhost:4000/api/users
+Content-Type: application/json
+
+{
+  "username": "Test User",
+  "age": 20,
+  "hobbies": ["awesome hobby", "another hobby"]
+}
+
+### Update user (replace with existing user uuid)
+PUT http://localhost:4000/api/users/b3dcb9d8-d12a-4757-a1bd-6fc49a472c4d
+Content-Type: application/json
+
+{
+  "username": "Username Updated",
+  "age": 100,
+  "hobbies": ["another hobby"]
+}
+
+### Delete user (replace with existing user uuid)
+DELETE http://localhost:4000/api/users/cf145b5f-5b25-4a43-92fb-7a31226aa3cc
+Content-Type: application/json
